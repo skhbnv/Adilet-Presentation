@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <EditText
+        android:id="@+id/lawer_name"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="name"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/lawer_surname"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="surname"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/lawer_gender"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="gender"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/lawer_age"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="age"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/lawer_phone"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="phone"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/lawer_login"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="login"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/lawer_password"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="password"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/lawer_confirm_password"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="confirm password"
+        android:layout_margin="10dp"
+        />
+
+</LinearLayout>

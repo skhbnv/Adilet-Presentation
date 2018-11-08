@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:paddingTop="16dp"
+    android:background="@drawable/gradient_pink">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="32sp"
+                android:textColor="#ffffff"
+                android:layout_marginTop="65dp"
+                android:layout_marginBottom="45dp"
+                android:text="Как вы хотите зарегистрироваться?"
+                />
+
+            <LinearLayout
+                android:id="@+id/as_user_btn"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:background="@drawable/background_registration_btn"
+                android:layout_marginBottom="25dp"
+                android:clickable="true"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Как пользователь"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textSize="28sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="#DADADA"
+                android:textSize="18sp"
+                android:text="Вы сможете выбирать юристов и пользоваться их услугами"
+                />
+        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/as_lawyer_btn"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:orientation="vertical"
+                android:background="@drawable/background_registration_btn"
+                android:clickable="true"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Как юрист"
+                    android:padding="10dp"
+                    android:textColor="#ffffff"
+                    android:textSize="28sp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textColor="#DADADA"
+                    android:textSize="18sp"
+                    android:text="Вы сможете подать объявление о предоставлении услуг, которое увидят пользователи"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <EditText
+        android:id="@+id/user_name"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="name"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/user_surname"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="surname"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/user_gender"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="gender"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/user_age"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="age"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/user_phone"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="phone"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/user_login"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="login"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/user_password"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:inputType="textPassword"
+        android:id="@+id/user_confirm_password"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:hint="confirm password"
+        android:layout_margin="10dp"
+        />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_height="50dp"
+        android:layout_width="match_parent" />
+
+    <Button
+        android:id="@+id/reg_but"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="зарегистрироваться"
+        android:layout_height="50dp"
+        android:layout_width="130dp"/>
+
+
+</LinearLayout>
+</ScrollView>

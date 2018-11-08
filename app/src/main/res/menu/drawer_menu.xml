@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/common_google_signin_btn_icon_disabled"
+            android:title="Список юристов" />
+        <item
+            android:icon="@drawable/common_google_signin_btn_icon_disabled"
+            android:title="Свод законов" />
+        <item
+            android:icon="@drawable/common_google_signin_btn_icon_disabled"
+            android:title="Онлайн поддержка" />
+        <item
+            android:icon="@drawable/common_google_signin_btn_icon_disabled"
+            android:title="Часто задаваемые вопросы" />
+        <item
+            android:icon="@drawable/common_google_signin_btn_icon_disabled"
+            android:title="Контакты" />
+        <item
+            android:icon="@drawable/common_google_signin_btn_icon_disabled"
+            android:title="О приложении" />
+    </group>
+</menu>
