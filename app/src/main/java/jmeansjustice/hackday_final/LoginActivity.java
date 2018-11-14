@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getSupportActionBar().hide();
 
         initUI();
     }
@@ -81,7 +80,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
-    interface customListener{
+    public interface customListener{
         public void onDataLoadedListener(ArrayList<Users> users);
+        public void onDataLoadedListenerRegister(ArrayList<Registrate> users);
     }
 }

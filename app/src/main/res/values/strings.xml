@@ -3,4 +3,7 @@
     <string name="title_activity_main_page">MainPageActivity</string>
     <string name="title_activity_filter_activity">filter_activity</string>
     <string name="title_activity_personal_page">PersonalPage</string>
+
+    <string name="name_fmt">Name: %1$s</string>
+    <string name="surname_fmt">Surname: %1$s</string>
 </resources>

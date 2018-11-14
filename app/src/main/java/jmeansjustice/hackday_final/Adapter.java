@@ -15,15 +15,17 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements PersonalPage.itemCreatedInterface  {
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     int adapterPosition;
     private List<Users> users;
 
-    Adapter(List<Users> users){ this.users = users;}
+    private PersonalPage.itemCreatedInterface itemCreatedInterface;
 
-    @Override
-    public void onItemCreated(String id) {
-        //дописать открытие layouta
+    public Adapter(List<Users> users){ this.users = users;}
+
+
+    public void setItemCreatedInterface(PersonalPage.itemCreatedInterface itemCreatedInterface) {
+        this.itemCreatedInterface = itemCreatedInterface;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
@@ -83,9 +85,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> implements
                 if (isLongClick) {
                     Log.d("possition", "onItemClicked: " + position);
                 }else {
+                    Log.d("possition", "coo=asd: " + position);
                     users.get(position).getmID();
                     String id = users.get(position).getmID();
-                    onItemCreated(id);
+                    itemCreatedInterface.onItemCreated(id);
                 }
             }
         });

@@ -1,18 +1,22 @@
 package jmeansjustice.hackday_final;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -23,80 +27,75 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainPageActivity extends Activity implements View.OnClickListener, LoginActivity.customListener {
-    static ArrayList<Users> array = new ArrayList<>();
+import jmeansjustice.hackday_final.main.AboutAppFragment;
+import jmeansjustice.hackday_final.main.ContactsFragment;
+import jmeansjustice.hackday_final.main.FaqFragment;
+import jmeansjustice.hackday_final.main.LawListFragment;
+import jmeansjustice.hackday_final.main.LawyerListFragment;
+import jmeansjustice.hackday_final.main.OnlineSupportFragment;
+
+public class MainPageActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener,
+        LoginActivity.customListener, OnLawyersLoadListener {
+    public static ArrayList<Users> array = new ArrayList<>();
     private DatabaseReference myRef;
     private FirebaseDatabase mDatabase;
     private ImageView mImage;
-
+    private static Toolbar mToolbar;
+    private static ActionBar mActionbar;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
+    private TextView mOtherInfo;
     private RecyclerView.LayoutManager mLayoutManager;
 
     private DrawerLayout mDrawerLayout;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new LawyerListFragment()).commit();
+
         setContentView(R.layout.activity_main_page);
+        mToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        mActionbar = getSupportActionBar();
+        mActionbar.setDisplayHomeAsUpEnabled(true);
+        mActionbar.setHomeAsUpIndicator(R.drawable.ic_menu_btn);
+        mActionbar.setTitle("Список юристов");
 
         initUI();
-
-        databaseConnector();
-
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(
-            new NavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(MenuItem menuItem) {
-                    // set item as selected to persist highlight
-                    menuItem.setChecked(true);
-                    // close drawer when item is tapped
-                    mDrawerLayout.closeDrawers();
-
-                    return true;
-                }
-            });
-    }
-
-    private void databaseConnector() {
-        myRef.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ArrayList<Users> items = new ArrayList<Users>();
-                for(DataSnapshot child: dataSnapshot.getChildren()){
-                    for (DataSnapshot second_child: child.getChildren()){
-                        items.add(second_child.getValue(Users.class));
-                    }
-                }
-                onDataLoadedListener(items);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(MainPageActivity.this, databaseError.toString(),
-                        Toast.LENGTH_LONG).show();
-            }
-        });
-
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     private void initUI() {
         mDrawerLayout = findViewById(R.id.drawer_layout);
-        mRecyclerView = findViewById(R.id.RecyclerView);
-        mDatabase = FirebaseDatabase.getInstance();
-        myRef = mDatabase.getReference();
-        mImage = findViewById(R.id.main_filter);
-        mImage.setOnClickListener(this);
 
+//        mImage = findViewById(R.id.main_filter);
+//        mImage.setOnClickListener(this);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            case R.id.main_filter:
+                Log.d("Filter", "onOptionsItemSelected: filter is working");
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case (R.id.main_filter):
-                Log.d("taaag", "onClick: filter is working");
+                Log.d("taaag", "onClick: filter is working!!!!!!!!!!!!");
                 Intent intent = new Intent(this,Filter_activity.class );
                 startActivity(intent);
                 break;
@@ -104,14 +103,59 @@ public class MainPageActivity extends Activity implements View.OnClickListener, 
     }
 
     @Override
-    public void onDataLoadedListener(ArrayList<Users> arrayOfUsers) {
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.actionbar, menu);
+        return true;
+    }
 
-        array = arrayOfUsers;
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new Adapter(array);
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_law_list:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new LawListFragment()).commit();
+                break;
+            case R.id.nav_online_support:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new OnlineSupportFragment()).commit();
+                break;
+            case R.id.nav_contacts:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new ContactsFragment()).commit();
+                break;
+            case R.id.nav_about_app:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new AboutAppFragment()).commit();
+                break;
+            case R.id.nav_faq:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new FaqFragment()).commit();
+                break;
+            case R.id.nav_lawyer_list:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new LawyerListFragment()).commit();
+                break;
+        }
+        return false;
+    }
 
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    @Override
+    public void onDataLoadedListener(ArrayList<Users> users) {
+
+    }
+
+    @Override
+    public void onDataLoadedListenerRegister(ArrayList<Registrate> users) {
+
+    }
+
+    @Override
+    public void onLawyersLoaded(int quantity) {
+        getSupportActionBar().setSubtitle(String.valueOf(quantity));
     }
 }

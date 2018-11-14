@@ -5,9 +5,4 @@
         android:centerColor="#74499f"
         android:startColor="#842ddb"
         android:angle="90"/>
-    <padding android:left="7dp"
-        android:top="7dp"
-        android:right="7dp"
-        android:bottom="7dp" />
-
 </shape>

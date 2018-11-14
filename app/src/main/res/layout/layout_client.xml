@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/usersNames"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        tools:text="Test"/>
+
+    <TextView
+        android:id="@+id/usersSurnames"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        tools:text="UserTest"/>
+
+</LinearLayout>

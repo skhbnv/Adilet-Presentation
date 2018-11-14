@@ -22,6 +22,12 @@ public class Users {
         this.mPhone = mPhone;
         this.mCategory= mCategory;
     }
+    Users(String mName, String mSurname, String mID) {
+        this.mName = mName;
+        this.mID = mID;
+        this.mSurname = mSurname;
+        this.mCategory= mCategory;
+    }
 
     public String getmAge() {
         return mAge;

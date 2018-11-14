@@ -1,66 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#203141">
 
-    <EditText
-        android:id="@+id/lawer_name"
-        android:layout_height="50dp"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:hint="name"
-        android:layout_margin="10dp"
-        />
-    <EditText
-        android:id="@+id/lawer_surname"
-        android:layout_height="50dp"
-        android:layout_width="match_parent"
-        android:hint="surname"
-        android:layout_margin="10dp"
-        />
-    <EditText
-        android:id="@+id/lawer_gender"
-        android:layout_height="50dp"
-        android:layout_width="match_parent"
-        android:hint="gender"
-        android:layout_margin="10dp"
-        />
-    <EditText
-        android:id="@+id/lawer_age"
-        android:layout_height="50dp"
-        android:layout_width="match_parent"
-        android:hint="age"
-        android:layout_margin="10dp"
-        />
-    <EditText
-        android:id="@+id/lawer_phone"
-        android:layout_height="50dp"
-        android:layout_width="match_parent"
-        android:hint="phone"
-        android:layout_margin="10dp"
-        />
-    <EditText
-        android:id="@+id/lawer_login"
-        android:layout_height="50dp"
-        android:layout_width="match_parent"
-        android:hint="login"
-        android:layout_margin="10dp"
-        />
-    <EditText
-        android:id="@+id/lawer_password"
-        android:layout_height="50dp"
-        android:layout_width="match_parent"
-        android:hint="password"
-        android:layout_margin="10dp"
-        />
-    <EditText
-        android:id="@+id/lawer_confirm_password"
-        android:layout_height="50dp"
-        android:layout_width="match_parent"
-        android:hint="confirm password"
-        android:layout_margin="10dp"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
 
-</LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="329dp"
+            android:layout_height="54dp"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/edit_text_form">
+
+            <EditText
+                android:id="@+id/lawyer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Имя"
+                android:paddingLeft="15dp"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DBDEE0"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="329dp"
+            android:layout_height="54dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/edit_text_form">
+
+            <EditText
+                android:id="@+id/lawyer_surname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Фамилия"
+                android:paddingLeft="15dp"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DBDEE0"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="329dp"
+            android:layout_height="54dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/edit_text_form">
+
+            <EditText
+                android:id="@+id/lawyer_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Email"
+                android:paddingLeft="15dp"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DBDEE0"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="329dp"
+            android:layout_height="54dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/edit_text_form">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="329dp"
+            android:layout_height="54dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/edit_text_form">
+
+            <EditText
+                android:id="@+id/lawyer_certificate_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Номер сертификата"
+                android:paddingLeft="15dp"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DBDEE0"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="329dp"
+            android:layout_height="54dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/edit_text_form">
+
+            <EditText
+                android:id="@+id/lawyer_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Пароль"
+                android:paddingLeft="15dp"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DBDEE0"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="329dp"
+            android:layout_height="54dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="44dp"
+            android:background="@drawable/edit_text_form">
+
+            <EditText
+                android:id="@+id/laywer_password_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Подтвердить"
+                android:paddingLeft="15dp"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#DBDEE0"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:gravity="center"
+            android:layout_width="329dp"
+            android:layout_height="54dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="18dp"
+            android:text="Зарегистрироваться"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_form">
+        </Button>
+
+
+
+    </LinearLayout>
+</ScrollView>

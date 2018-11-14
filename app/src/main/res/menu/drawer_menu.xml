@@ -2,22 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_lawyer_list"
             android:icon="@drawable/common_google_signin_btn_icon_disabled"
             android:title="Список юристов" />
         <item
+            android:id="@+id/nav_law_list"
             android:icon="@drawable/common_google_signin_btn_icon_disabled"
             android:title="Свод законов" />
         <item
+            android:id="@+id/nav_online_support"
             android:icon="@drawable/common_google_signin_btn_icon_disabled"
             android:title="Онлайн поддержка" />
         <item
+            android:id="@+id/nav_faq"
             android:icon="@drawable/common_google_signin_btn_icon_disabled"
-            android:title="Часто задаваемые вопросы" />
+            android:title="Мои заявки" />
         <item
+            android:id="@+id/nav_contacts"
             android:icon="@drawable/common_google_signin_btn_icon_disabled"
             android:title="Контакты" />
         <item
+            android:id="@+id/nav_about_app"
             android:icon="@drawable/common_google_signin_btn_icon_disabled"
             android:title="О приложении" />
     </group>

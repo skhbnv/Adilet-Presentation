@@ -26,7 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class UserRegistrationActivity extends AppCompatActivity implements View.OnClickListener,
         RegistrationTypeActivity.CustomListener{
 
-
     EditText mName;
     EditText mSurname;
     EditText mGender;
@@ -50,7 +49,7 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_registration_layout);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
         initUI();
         spinnerAdapter();
@@ -91,15 +90,15 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
 
     private void initUI() {
         mAuth = FirebaseAuth.getInstance();
-        mSpinner = findViewById(R.id.spinner);
+//        mSpinner = findViewById(R.id.spinner);
         mName = findViewById(R.id.user_name);
         mSurname = findViewById(R.id.user_surname);
-        mGender = findViewById(R.id.user_gender);
-        mAge = findViewById(R.id.user_age);
-        mPhone = findViewById(R.id.user_phone);
+//        mGender = findViewById(R.id.user_gender);
+//        mAge = findViewById(R.id.user_age);
+//        mPhone = findViewById(R.id.user_phone);
         mLogin = findViewById(R.id.user_login);
         mPassword = findViewById(R.id.user_password);
-        mConfPassword = findViewById(R.id.user_confirm_password);
+//        mConfPassword = findViewById(R.id.user_confirm_password);
 
         mSave = findViewById(R.id.reg_but);
         mSave.setOnClickListener(this);
@@ -186,5 +185,9 @@ public class UserRegistrationActivity extends AppCompatActivity implements View.
                         }
                     }
                 });
+    }
+    interface forRegistrationListener{
+        public void onDataLoadedForRegistration();
+        public void customDataLoader(String userID, Users user);
     }
 }

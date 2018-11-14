@@ -5,67 +5,34 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    >
 
     <!--Main layout-->
     <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/gradient_blue"
+        android:gravity="center_horizontal"
+        android:background="#4A5865"
         >
-
-        <LinearLayout
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:titleTextColor="@color/colorWhite"
+            app:subtitleTextColor="#DBDEE0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            >
+            android:layout_height="?attr/actionBarSize"
+            android:background="#203141"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
-            <ImageView
-                android:id="@+id/drawer_menu"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="-20dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/ic_menu_btn"
-                android:clickable="true" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:ems="12"
-                android:textColor="@color/colorWhite"
-                android:hint="Search:"
-                android:textSize="18sp"
-                android:maxLines="1"
-                android:padding="10dp" />
-
-            <ImageView
-                android:id="@+id/search"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/ic_search"
-                android:clickable="true" />
-
-            <ImageView
-                android:id="@+id/main_filter"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/ic_filter_results_button"
-                android:clickable="true" />
-        </LinearLayout>
-
-
-        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/RecyclerView"
+        <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
-        </android.support.v7.widget.RecyclerView>
+        </FrameLayout>
+
 
     </LinearLayout>
 
@@ -78,8 +45,9 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:menu="@menu/drawer_menu"
+        android:background="@color/colorWhite"
+        app:itemTextColor="@color/colorPrimaryDark"
+        app:itemIconTint="@color/colorPrimaryDark"
         />
-
-
 
 </android.support.v4.widget.DrawerLayout>

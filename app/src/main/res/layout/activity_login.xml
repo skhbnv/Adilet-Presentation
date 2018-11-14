@@ -51,8 +51,9 @@
                     android:id="@+id/login_first_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
                     android:text="First time here?"
-                    android:layout_marginLeft="104dp"
+                    android:layout_marginLeft="81dp"
                     android:textSize="24sp"
                     android:textColor="#ffffff"
                     android:padding="8dp"
@@ -123,6 +124,7 @@
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
                     android:layout_marginTop="8dp"
                     android:text="Remember me"
                     android:textColor="#ffffff"
@@ -133,10 +135,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Forgot your password?"
+                    android:background="?android:attr/selectableItemBackground"
                     android:textColor="#ffffff"
                     android:padding="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginLeft="72dp"
+                    android:layout_marginLeft="50dp"
                     android:clickable="true" />
 
             </LinearLayout>
